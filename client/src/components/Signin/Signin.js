@@ -30,7 +30,7 @@ export default function Signup() {
                     {errors.email && <p className={classes.errors}>This field is required</p>}
                     <div className={classes.formInput} >
                         <label id='password' >Password:</label>
-                        <input type="password" className={classes.input} name='password' ref={register({required: true})} />
+                        <input type="password" className={classes.input} name='password' autocomplete="current-password" ref={register({required: true})} />
                     </div>
                     {errors.password && <p className={classes.errors}>This field is required</p>}
                         <input 
