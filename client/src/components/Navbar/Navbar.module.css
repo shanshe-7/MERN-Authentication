@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  background-color: #696969;
+}
+
+.Select {
+  border: 3px solid red;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  width: 100px;
+  height: 40px;
+  background-color: #b2cce5;
+  color: #050709;
+  font-size: 1.1em;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  display: none;
+}
+.AuthAndDashboard {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: space-around;
+  align-items: center;
+  width: 200px;
+  margin-left: 30px;
+  list-style-type: none;
+}
+
+.Links {
+  text-decoration: none;
+  color: #050709;
+  font-size: 1.2em;
+  padding: 4px 8px;
+  border-radius: 5px;
+  background-color: #b2cce5;
+  font-family: 'Roboto', 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+    sans-serif;
+  cursor: pointer;
+}
+
+.sign {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: space-around;
+  align-items: center;
+  width: 200px;
+  margin-right: 30px;
+}
+
+.Links:hover {
+  background-color: #4b6a88;
+  color: #fefefe;
+}
+
+@media only screen and (max-width: 600px) {
+  .AuthAndDashboard {
+    display: none;
+  }
+  .sign {
+    display: none;
+  }
+
+  .Select {
+    display: inherit;
+  }
+
+  .navbar {
+    justify-content: center;
+    align-items: center;
+  }
+}
