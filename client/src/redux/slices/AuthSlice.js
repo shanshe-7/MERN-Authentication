@@ -7,7 +7,7 @@ axios.defaults.headers.common['Authorization'] = jwtToken;
 export const userSignUp = createAsyncThunk(
     'users/signUp',
     async (data) => {
-        const response = await axios.post('http://localhost:8000/users/signup', data);
+        const response = await axios.post('https://mernauthentication.herokuapp.com/signup', data);
         localStorage.setItem('JWT_Token', response.data.token);
         axios.defaults.headers.common['Authorization'] = response.data.token;
         return response;
@@ -18,7 +18,7 @@ export const userSignUp = createAsyncThunk(
 export const userSignIn = createAsyncThunk(
     'users/signIn',
     async (data) => {
-        const response = await axios.post('http://localhost:8000/users/signin', data);
+        const response = await axios.post('https://mernauthentication.herokuapp.com/signin', data);
         localStorage.setItem('JWT_Token', response.data.token);
         axios.defaults.headers.common['Authorization'] = response.data.token;
         return response;
@@ -29,7 +29,7 @@ export const userSignIn = createAsyncThunk(
 export const getSecretData = createAsyncThunk(
     'users/getSecretData',
     async () => {
-        const response = await axios.get('http://localhost:8000/users/secret');
+        const response = await axios.get('https://mernauthentication.herokuapp.com/secret');
         return response;
     }
 );
