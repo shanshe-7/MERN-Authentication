@@ -25,17 +25,18 @@ export default function Signup() {
                 <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
                     <div className={classes.formInput}>
                         <label id='email'>Email:</label>
-                        <input className={classes.input} name='email' ref={register({required: true})} />
+                        <input className={classes.input} name='email'  autoComplete="on" ref={register({required: true})} />
                     </div>
                     {errors.email && <p className={classes.errors}>This field is required</p>}
                     <div className={classes.formInput} >
-                        <label id='password' >Password:</label>
-                        <input type="password" className={classes.input} name='password' autoComplete="current-password" ref={register({required: true})} />
+                        <label id='password'  autoComplete="on" >Password:</label>
+                        <input type="password" className={classes.input} name='password' autoComplete="off" ref={register({required: true})} />
                     </div>
                     {errors.password && <p className={classes.errors}>This field is required</p>}
                         <input 
                         className={classes.submitInput} 
-                        type='submit' value='Sign In' />
+                        type='submit' value='Sign In' 
+                        autoComplete="on"/>
                     {errorMessage ? <p className={classes.errors}>{errorMessage}</p> : null  }
                 </form>
             </div>

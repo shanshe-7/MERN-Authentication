@@ -26,26 +26,26 @@ export default function Signup() {
                 <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
                 <div className={classes.formInput} >
                         <label id='firstname' >Firstname:</label>
-                        <input className={classes.input}  name='firstname' ref={register({required: true})} />
+                        <input className={classes.input}  name='firstname'  autoComplete="on" ref={register({required: true})} />
                     </div>
                     {errors.firstname && <p className={classes.errors}>This field is required</p>}
                     <div className={classes.formInput} >
                         <label id='lastname' >Lastname:</label>
-                        <input className={classes.input}  name='lastname' ref={register({required: true})} />
+                        <input className={classes.input}  name='lastname'  autoComplete="on" ref={register({required: true})} />
                     </div>
                     {errors.lastname && <p className={classes.errors}>This field is required</p>}
                     <div className={classes.formInput}>
                         <label id='email' >Email:</label>
-                        <input className={classes.input}  name='email' ref={register({required: true})} />
+                        <input className={classes.input}  name='email'  autoComplete="on" ref={register({required: true})} />
                     </div>
                     {errors.email && <p className={classes.errors}>This field is required</p>}
                     <div className={classes.formInput} >
                         <label id='password'>Password:</label>
-                        <input className={classes.input} name='password' ref={register({required: true})} />
+                        <input className={classes.input} name='password'  autoComplete="on" ref={register({required: true})} />
                     </div>
                     {errors.password && <p className={classes.errors}>This field is required</p>}
                     
-                    <input className={classes.submitInput} type='submit' value='Sign Up' />
+                    <input className={classes.submitInput} type='submit'  autoComplete="on" value='Sign Up' />
                     {errorMessage ?<p className={classes.errors}>{errorMessage}</p>: null  }
                    
                 </form>
