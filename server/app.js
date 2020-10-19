@@ -9,7 +9,7 @@ app.use(cors());
 
 // connect to mongoDB URL 
 const dbURL = 'mongodb+srv://shanshe:qazwsxedc123@cluster0.dats6.mongodb.net/node-auth?retryWrites=true&w=majority';
-mongoose.connect(dbURL, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.MONGO_URL || dbURL, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(()=> console.log('connected to db'))
     .catch((err) => console.log(err));
 
