@@ -3,25 +3,26 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const { dbURL } = require('./configuration/index');
 
 const app = express();
 app.use(cors());
 
-// connect to mongoDB URL 
-const dbURL = 'mongodb+srv://shanshe:qazwsxedc123@cluster0.dats6.mongodb.net/node-auth?retryWrites=true&w=majority';
-mongoose.connect(process.env.MONGODB_URI || dbURL, {useNewUrlParser: true, useUnifiedTopology: true});
+// connect to mongoDB URL
+mongoose.connect(process.env.MONGODB_URI || dbURL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 //Middlewares
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
-
-
 //Route
 app.use('/users', require('./routes/users'));
 
-if(process.env.NODE_ENV === "production"){
-    app.use(express.static('client/build'));
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
 }
 
 //Start the server
